@@ -1,12 +1,8 @@
-var time = 60;
-function functionTest() {
-  function increase() {
-    return ++time;
-  }
-  return increase;
-}
+const http = require("http");
+const server = http.createServer();
 
-const result = functionTest();
-console.log(result());
-console.log(result());
-console.log(result());
+server.on("request", (req, res) => {
+  res.end("Welcome");
+});
+
+server.listen(5000);
